@@ -1,24 +1,39 @@
 const Web3 = require('web3')
 
-//GNT4 on ropsten
-const _CONTRACT_ADDR = '0xa8e7ade445974dfc0465bdc30151ae2b594e0ab1'
-//EOS on mainnet
-//const _CONTRACT_ADDR = '0x7b39940DbaC110f1227D37c395675dEf270AfCd7'
+var args = process.argv.splice(2)
 
-//liuyi1
-const _BAL_ADDR = '0xb5129934b99e1c0cd98F5F9e3ed23c70b45B5197'
-//liuyi3
-//const _BAL_ADDR = '0x5106f3AFa0e27BdD3faffEb9158526FA678895F3'
+const networkid = args[0]
+const _PROVIDER_URL = 'http://127.0.0.1:8545'
 
-//const web3Provider = new Web3.providers.HttpProvider(_WEB3_ROPSTEN_INFURA)
-const web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545')
+switch(networkid)
+{
+    case '1':
+        var _PASSWD ='iza1J3q7nSjn'
+        //EOS on mainnet
+        var _CONTRACT_ADDR = '0x86Fa049857E0209aa7D9e616F7eb3b3B78ECfdb0'
+        //liuyi3
+        var _BAL_ADDR = '0x5106f3AFa0e27BdD3faffEb9158526FA678895F3'
+        break;
+    case '3':
+        var _PASSWD = '123456'
+        //GNT4 on ropsten
+        var _CONTRACT_ADDR = '0xa8e7ade445974dfc0465bdc30151ae2b594e0ab1'
+        //liuyi1
+        var _BAL_ADDR = '0xb5129934b99e1c0cd98F5F9e3ed23c70b45B5197'
+        break;
+    default:
+        console.log('wrong network!',networkid)
+        process.exit(0)
+}
+
+const web3Provider = new Web3.providers.HttpProvider(_PROVIDER_URL)
 const web3 = new Web3(web3Provider)
 console.log(web3.isConnected())
 console.log(web3.version.network)
 console.log('account[0]:',web3.eth.accounts[0])
 
 web3.eth.defaultAccount = web3.eth.accounts[0]
-web3.personal.unlockAccount(web3.eth.defaultAccount, "123456", 999, function (error, result) {
+web3.personal.unlockAccount(web3.eth.defaultAccount, _PASSWD, 999, function (error, result) {
     if (!error) {
         console.log(result);
 

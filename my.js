@@ -56,7 +56,7 @@ web3.personal.unlockAccount(web3.eth.defaultAccount, _PASSWD, 999, function (err
         //console.log(name.toString())
 
         //var event = instance['Transfer']()
-        var event =  instance.Transfer({from: _BAL_ADDR})
+        var event =  instance.Transfer({from: _BAL_ADDR},{fromBlock: 0, toBlock: 'latest'})
         event.watch(function (error, eventResult) {
             if (error) {
                 console.error(error);

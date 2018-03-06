@@ -9,8 +9,8 @@ switch(networkid)
 {
     case '1':
         var _PASSWD ='iza1J3q7nSjn'
-        //EOS on mainnet
-        var _CONTRACT_ADDR = '0x86Fa049857E0209aa7D9e616F7eb3b3B78ECfdb0'
+        //CANDY on mainnet
+        var _CONTRACT_ADDR = '0x5106f3AFa0e27BdD3faffEb9158526FA678895F3'
         //liuyi3
         var _BAL_ADDR = '0x5106f3AFa0e27BdD3faffEb9158526FA678895F3'
         break;
@@ -56,7 +56,7 @@ web3.personal.unlockAccount(web3.eth.defaultAccount, _PASSWD, 999, function (err
         //console.log(name.toString())
 
         //var event = instance['Transfer']()
-        var event =  instance.Transfer()
+        var event =  instance.Transfer({from: _BAL_ADDR})
         event.watch(function (error, eventResult) {
             if (error) {
                 console.error(error);

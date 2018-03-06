@@ -54,6 +54,16 @@ web3.personal.unlockAccount(web3.eth.defaultAccount, _PASSWD, 999, function (err
 
         //const name = instance.name.call()
         //console.log(name.toString())
+
+        //var event = instance['Transfer']()
+        var event =  instance.Transfer()
+        event.watch(function (error, eventResult) {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log(eventResult);
+            }
+        });
     }
     else {
         console.error("unlock failed!");

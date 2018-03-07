@@ -1,37 +1,34 @@
 {
-  "name": "ethereum-listener",
-  "version": "0.0.4",
+  "name": "ethereum-contract listener",
+  "version": "0.0.1",
   "description": "This little npm module subscribes to the event of a contract in the ethereum blockchain and prints out the information.",
-  "main": "index.js",
+  "main": "geth.js",
   "scripts": {
     "test": "test"
   },
   "bin": {
-    "ethereum-listener": "./index.js"
+    "ethereum-listener": "./igeth.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simon991/ethereum-event-listener.git"
+    "url": "git+https://github.com/toliuyi/ERC20-contract-listener.git"
   },
   "keywords": [
     "ethereum",
     "event",
     "subscription",
     "monitoring",
+    "geth",
+    "infura",
     "event"
   ],
-  "author": "cp2017",
+  "author": "toliuyi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simon991/ethereum-event-listener/issues"
+    "url": "https://github.com/toliuyi/ERC20-contract-listener/issues"
   },
-  "homepage": "https://github.com/simon991/ethereum-event-listener#readme",
+  "homepage": "https://github.com/toliuyi/ERC20-contract-listener#readme",
   "dependencies": {
-    "chalk": "^1.1.3",
-    "clear": "0.0.1",
-    "figlet": "^1.2.0",
-    "inquirer": "^3.0.1",
-    "web3": "1.0.0-beta.30",
-    "net": "1.0.2"
+    "web3": "1.0.0-beta.30"
   }
 }

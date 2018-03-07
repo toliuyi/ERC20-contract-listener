@@ -1,5 +1,5 @@
 {
-  "name": "Ethereum event listener",
+  "name": "ethereum-event-listener",
   "version": "0.0.1",
   "description": "Examples of Ethereum event listen from geth or infura.",
   "main": "geth.js",

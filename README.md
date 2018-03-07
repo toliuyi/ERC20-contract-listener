@@ -9,6 +9,8 @@ Examples of Ethereum event listen from geth or infura.
 4. Listen contract event from ropsten via geth 'node geth.js';
 5. Listen new block event from mainnet via infura 'node infura.js';
 
+Infura don't support contract event listen at present, plz refer to [#issue73](https://github.com/INFURA/infura/issues/73) 
+
 
 
 
